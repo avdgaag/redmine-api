@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Redmine API by avdgaag</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Redmine API</h1>
+      <h2 class="project-tagline">A simple Redmine command line API client</h2>
+      <a href="https://github.com/avdgaag/redmine-api" class="btn">View on GitHub</a>
+      <a href="https://github.com/avdgaag/redmine-api/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/avdgaag/redmine-api/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="redmine-api-" class="anchor" href="#redmine-api-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redmine API <a href="https://travis-ci.org/avdgaag/redmine-api"><img src="https://travis-ci.org/avdgaag/redmine-api.svg?branch=master" alt="Build Status"></a>
+</h1>
+
+<p>This is a command-line interface to the popular Redmine issue tracking system, based on its REST API. Use it to quickly get the information you need without taking your hands off the keyboard to open a browser.</p>
+
+<p>This is a simple pure-Ruby gem with no additional runtime dependencies. It is as much an exercise in using the Ruby standard library as it is meant to be useful.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>You can install this gem using Rubygems:</p>
+
+<pre><code>$ gem install redmine-api
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To use this gem, invoke its executable from the command line:</p>
+
+<pre><code>% redmine --version
+0.1.0
+</code></pre>
+
+<p>This program consists of several subcommands, which you can see listed when you print the help information:</p>
+
+<pre><code>% redmine --help
+</code></pre>
+
+<p>For example, to list all available projects in your Redmine installation, use the <code>projects</code> subcommand:</p>
+
+<pre><code>% redmine projects
+</code></pre>
+
+<p>For more information, read the docs or the inline help.</p>
+
+<h2>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authentication</h2>
+
+<p>In order to access your Redmine data, you need to configure the gem to point to the right Redmine installation and provide proper credentials. You can do so by creating a configuration file in your project directory containing that information. Such a configuration file would be named <code>.redmine.yml</code> and might look like this:</p>
+
+<pre><code>---
+api_token: '14acda31941e8c5dc3be12d1a5d108311b7da3eb'
+base_uri: 'http://redmine.mydomain.tld'
+http_cache: 'redmine.cache'
+</code></pre>
+
+<p>Using the API token is currently the only supported way to authenticate against Redmine. Since your API token is private, make sure you make your configuration file only accessible to yourself. This program will look for a <code>.redmine.yml</code> file in the current directory its ancestor directories, merging all of them together into one final configuration (with the first file to be encountered taking precedence over later files).</p>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake test</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/avdgaag/redmine-api">https://github.com/avdgaag/redmine-api</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<ul>
+<li>
+<strong>Author</strong>: Arjan van der Gaag <a href="mailto:arjan@arjanvandergaag.nl">arjan@arjanvandergaag.nl</a>
+</li>
+<li>
+<strong>URL</strong>: arjanvandergaag.nl</li>
+<li>
+<strong>Homepage</strong>: <a href="https://github.com/avdgaag/redmine-api">https://github.com/avdgaag/redmine-api</a>
+</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The gem is available as open source under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/avdgaag/redmine-api">Redmine API</a> is maintained by <a href="https://github.com/avdgaag">avdgaag</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-20357800-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
