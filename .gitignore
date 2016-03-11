@@ -1,0 +1,4 @@
+*.pstore
+.redmine.yml
+doc
+pkg

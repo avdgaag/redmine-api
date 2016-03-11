@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+require 'redmine'
+
+begin
+  require 'pry'
+  Pry.start
+rescue LoadError
+  require 'irb'
+  IRB.start
+end
