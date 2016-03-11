@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby -w
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'redmine'
+Redmine.cli(ARGV)
